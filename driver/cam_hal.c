@@ -217,12 +217,12 @@ static void cam_task(void *arg)
                     cnt++;
                     // stop when too many DMA copies occur so the PSRAM
                     // framebuffer slot doesn't overflow from runaway transfers
-                    if (cnt >= cam_obj->frame_copy_cnt) {
-                        ESP_LOGE(TAG, "DMA overflow");
-                        ll_cam_stop(cam_obj);
-                        cam_obj->state = CAM_STATE_IDLE;
-                        continue;
-                    }
+                    // if (cnt >= cam_obj->frame_copy_cnt) {
+                    //     ESP_LOGE(TAG, "DMA overflow");
+                    //     ll_cam_stop(cam_obj);
+                    //     cam_obj->state = CAM_STATE_IDLE;
+                    //     continue;
+                    // }
 
                 } else if (cam_event == CAM_VSYNC_EVENT) {
                     //DBG_PIN_SET(1);
